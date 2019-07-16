@@ -355,8 +355,8 @@ else
 exit(0);
   }
  ```
-Output:
-![Output-Sequential-File-Allocation](./image/Output-Sequential-File-Allocation.jpg)
+##### Output:
+![Output-Sequential-File-Allocation](./output-images/Output-Sequential-File-Allocation.png)
 ### b) Implementation of  Linked File Allocation:
 ```c++
 #include<stdio.h>
@@ -398,9 +398,10 @@ goto X;
 else
 exit(0);
 }
-
-Output:
 ```
+
+##### Output:
+![Output-Linked-File-Allocation](./output-images/Output-Linked-File-Allocation.png)
 ### c) Implementation of  Indexed File Allocation:
 ```c++
 #include<stdio.h>
@@ -447,10 +448,9 @@ else
 exit(0);
 //getch();
 }
-
-Output:
 ```
-
+##### Output:
+![Output-Indexed-File-Allocation](./output-images/Output-Indexed-File-Allocation.png)
 ## Inter Process Communication
 ### 1) Anonymous Pipes
 #### Program to send a message from parent process to child process.
