@@ -309,9 +309,9 @@ void *fun2()
 ```
 ## File allocation methods
 ### Simulate all File allocation strategies:
-a. Sequential
-b. Indexed
-c. Linked
+##### a. Sequential
+##### b. Indexed
+##### c. Linked
 
 ### Theory
 
