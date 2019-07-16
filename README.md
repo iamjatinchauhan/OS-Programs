@@ -354,9 +354,9 @@ goto X;
 else
 exit(0);
   }
-Output:
  ```
-
+Output:
+![Output-Sequential-File-Allocation](./image/Output-Sequential-File-Allocation.jpg)
 ### b) Implementation of  Linked File Allocation:
 ```c++
 #include<stdio.h>
