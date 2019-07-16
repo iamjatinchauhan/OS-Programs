@@ -155,7 +155,7 @@ pthread_exit("Done"); // Thread returns "Done"
 ```
 #### Program 2:
 
-###Program to create a thread. The thread is passed more than one input from the main process. For passing multiple inputs we need to create structure and include all the variables that are to be passed in this structure.
+### Program to create a thread. The thread is passed more than one input from the main process. For passing multiple inputs we need to create structure and include all the variables that are to be passed in this structure.
 ```c++
 #include <stdio.h>
 #include <pthread.h>
@@ -309,9 +309,9 @@ void *fun2()
 ```
 ## File allocation methods
 ### Simulate all File allocation strategies:
-#### a)Sequential
-#### b)Indexed
-#### c)Linked
+a. Sequential
+b. Indexed
+c. Linked
 
 ### Theory
 
