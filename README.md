@@ -309,20 +309,20 @@ void *fun2()
 ```
 ## File allocation methods
 ### Simulate all File allocation strategies:
-### a)Sequential
-### b)Indexed
-### c)Linked
+#### a)Sequential
+#### b)Indexed
+#### c)Linked
 
 ### Theory
 
-### a) Sequential file allocation strategy: In this type of strategy, the files are allocated in a sequential manner such that there is a continuity among the various parts or fragments of the file.
+a) **Sequential file allocation strategy:** In this type of strategy, the files are allocated in a sequential manner such that there is a continuity among the various parts or fragments of the file.
 
-### b) Indexed file allocation strategy: In this type of strategy, the files are allocated based on the indexes that are created for each fragment of the file such that each and every similar indexed file is maintained by the primary index thereby providing flow to the file fragments.
+b) **Indexed file allocation strategy:** In this type of strategy, the files are allocated based on the indexes that are created for each fragment of the file such that each and every similar indexed file is maintained by the primary index thereby providing flow to the file fragments.
 
-### c) Linked file allocation strategy: In this type of strategy, the files are allocated in a linked list format where each and every fragment is linked to the other file through either addresses or pointers. Thus, the starting location of the file serve the purpose of extraction of the entire file because every fragment is linked to each other.
+c) **Linked file allocation strategy:** In this type of strategy, the files are allocated in a linked list format where each and every fragment is linked to the other file through either addresses or pointers. Thus, the starting location of the file serve the purpose of extraction of the entire file because every fragment is linked to each other.
 
-a) Implementation of Sequential File Allocation:
-
+### a) Implementation of Sequential File Allocation:
+```c++
 #include<stdio.h>
 #include<stdlib.h>
 main()
@@ -355,10 +355,10 @@ else
 exit(0);
   }
 Output:
- 
+ ```
 
-b) Implementation of  Linked File Allocation:
-
+### b) Implementation of  Linked File Allocation:
+```c++
 #include<stdio.h>
 #include<stdlib.h>
 main()
@@ -400,9 +400,9 @@ exit(0);
 }
 
 Output:
- 
-c) Implementation of  Indexed File Allocation:
-
+```
+### c) Implementation of  Indexed File Allocation:
+```c++
 #include<stdio.h>
 #include<stdlib.h>
 int f[50],i,k,j,inde[50],n,c,count=0,p;
@@ -449,11 +449,12 @@ exit(0);
 }
 
 Output:
- 
-Inter Process Communication
-1) Anonymous Pipes
-Q. Program to send a message from parent process to child process.
+```
 
+## Inter Process Communication
+### 1) Anonymous Pipes
+#### Program to send a message from parent process to child process.
+```c++
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
@@ -479,9 +480,10 @@ int main()
                   write(1,buffer,n);
       }
 }
-
-Program For IPC using popen and pclose
-Q. Program to write into a pipe
+```
+### Program For IPC using popen and pclose
+#### Program to write into a pipe
+```c++
 #include<stdio.h> 
 #include<stdlib.h> 
 #include<unistd.h> 
@@ -495,7 +497,9 @@ int main()
        fwrite(buffer,sizeof(char),strlen(buffer),rd); // to write the data into the pipe
       pclose(rd);
 }
- Q. Program to read from a pipe
+```
+#### Program to read from a pipe
+```c++
 #include<stdio.h> 
 #include<stdlib.h> 
 #include<unistd.h> 
@@ -509,9 +513,11 @@ int main()
        printf("%s\n", buffer);
       pclose(rd);
 }
-2) Named Pipes: 
-This will require three different programs to work
-Program 1: Creating fifo/named pipe ( 1.c )
+```
+### 2) Named Pipes: 
+#### This will require three different programs to work
+#### Program 1: Creating fifo/named pipe ( 1.c )
+```c++
             #include<unistd.h>
             #include<stdlib.h>
             #include<stdio.h>
@@ -521,10 +527,11 @@ Program 1: Creating fifo/named pipe ( 1.c )
                         res = mkfifo("fifo1",0777); //creates a named pipe with the name fifo1
                         printf("named pipe created\n");
             }
-Now compile and run this program.
+```
+> Now compile and run this program.
 
-
-Program 2: Writing to a fifo/named pipe ( 2.c )
+#### Program 2: Writing to a fifo/named pipe ( 2.c )
+```c++
             #include<stdlib.h>
             #include<stdio.h>
             #include<fcntl.h>
@@ -535,12 +542,12 @@ Program 2: Writing to a fifo/named pipe ( 2.c )
                        write(res,"written",7);
                         printf("Process %d finished\n",getpid());
             }
- Compile this program as
-     gcc -o 2 2.c
-Note: If you run this you will not see any output
+```
+>Compile this program as    *gcc -o 2 2.c*
+> Note: If you run this you will not see any output
 
-
-Program 3: Reading from the named pipe ( 3.c )
+#### Program 3: Reading from the named pipe ( 3.c )
+```c++
             #include<stdlib.h>
             #include<stdio.h>
             #include<fcntl.h>
@@ -555,15 +562,12 @@ Program 3: Reading from the named pipe ( 3.c )
                         printf("Process %d finished\n",getpid());
                       
             }
-Compile the program as
-     gcc  -o  3  3.c
-
-Now run both the object files simultaneously as
-    ./2  &  ./3
-
-3) Shared Pipes
-rogram 1: This program creates a shared memory segment, attaches itself to it and then writes some content into the shared memory segment.
-
+```
+>Compile the program as   gcc  -o  3  3.c
+>Now run both the object files simultaneously as    ./2  &  ./3
+### 3) Shared Pipes
+#### Program 1: This program creates a shared memory segment, attaches itself to it and then writes some content into the shared memory segment.
+```c++
 #include<unistd.h>
 #include<stdlib.h>
 #include<stdio.h>
@@ -584,10 +588,10 @@ int main()
     strcpy(shared_memory,buff); \\data written to shared memory
     printf("You wrote : %s\n",shared_memory);
 }
+```
 
-
-Program 2: This program attaches itself to the shared memory segment created in Program 1 and then reads whatever was written in the shared memory via Program 1
-
+#### Program 2: This program attaches itself to the shared memory segment created in Program 1 and then reads whatever was written in the shared memory via Program 1
+```c++
 #include<unistd.h>
 #include<stdlib.h>
 #include<stdio.h>
@@ -605,3 +609,4 @@ int main()
     printf("Process attached at %X\n",(int)shared_memory);
     printf("Data read from shared memory is : %s\n",shared_memory);
 }
+```
