@@ -1,4 +1,4 @@
-# OS-Programs     [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# OS-Programs [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 ---
 ## System call
 ### Program to write some message on the screen.
